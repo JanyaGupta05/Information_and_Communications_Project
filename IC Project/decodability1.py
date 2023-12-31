@@ -1,0 +1,47 @@
+from manim import *
+
+class decode(Scene):
+    def construct(self):
+        text1 = Text("Since the user does not have knowledge about the messages in advance, ",font_size=20)
+        text5 = Text("the queries are independent of the messages,hence", font_size=20)
+        text1.shift(UP * 2)
+        text5.shift(UP * 1.3)
+        self.play(Write(text1))
+        self.play(Write(text5))
+        tex1 = Tex("$I(Q_{1}^{[i]},..,Q_{N}^{[i]},W_{1},..,W_{M})=0$",font_size=25)
+        self.play(Write(tex1))
+        self.wait(2)
+        self.play(FadeOut(text1),FadeOut(tex1),FadeOut(text5))
+        text2 = Text("In order to ensure privacy, the retrieval strategy for the i th message ",font_size=20)
+        text6 = Text("should be indistinguishable from the retrieval strategy of W1 , hence,",font_size=20)
+        text2.shift(UP * 2)
+        text6.shift(UP * 1.3)
+        self.play(Write(text2))
+        self.play(Write(text6))
+        tex2 = Tex("$(Q_{N}^{[i]},A_{N}^{[i]},W_{1},..,W_{M})\sim (Q_{N}^{[1]},A_{N}^{[1]},W_{1},..,W_{M})$",font_size=25)
+        self.play(Write(tex2))
+        self.wait(48)
+        self.play(FadeOut(text2),FadeOut(tex2),FadeOut(text6))
+        text3 = Text("This implies that the queries and answers should be independent of the desired message ",font_size=20)
+        text6 = Text("index i ,i.e., the privacy constraint is,",font_size=20)
+        text3.shift(UP * 2)
+        text6.shift(UP * 1.3)
+        self.play(Write(text3),Write(text6))
+        tex3 = Tex("$I(Q_{N}^{[i]},A_{N}^{[i]},W_{1},..,W_{M};i)= 0$",font_size=25)
+        self.play(Write(tex3))
+        self.wait(4)
+        self.play(FadeOut(text3),FadeOut(tex3),FadeOut(text6))
+        text4 = Text("The retrieval rate R for the PIR problem is the ratio of the size of the desired message to the total ",font_size=20)
+        text6 = Text("download cost under the reliability constraint and the privacy constraint for some L ∈ N, i.e.,",font_size=20)
+        text4.shift(UP * 2)
+        text6.shift(UP * 1.3)
+        self.play(Write(text4))
+        self.play(Write(text6))
+        tex4 = Tex("$R=frac{H(W_{i})}{ \sum_{n=1}^{N}H(A_{N}^{[i]})}$",font_size=25)
+        self.play(Write(tex4))
+        self.wait(6)
+        self.play(FadeOut(text4),FadeOut(tex4),FadeOut(text6))
+        
+    
+
+      
